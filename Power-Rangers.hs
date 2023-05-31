@@ -58,12 +58,12 @@ rangerLider equipo
 
 ---- Punto 5 a) ----
 
-maximumBy ::
-maximumBy
+maximumBy :: Ord a => [a] -> a
+maximumBy lista = maximum lista
 
 ---- Punto 5 b) ----
 
-rangerMásPoderoso ::
+rangerMásPoderoso :: 
 rangerMásPoderoso
 
 
