@@ -20,8 +20,15 @@ powerRojo = UnPowerRanger "rojo" ["Crecer","Invisibilidad"] 20
 habilidadesSuper :: Persona -> [String]
 habilidadesSuper persona = map (++"Super") (habilidades persona)
 
+sumarTamañoPalabra :: Persona -> Number
+sumarTamañoPalabra persona = sum . map length . habilidades $ persona
+
 convertirEnPowerRanger :: String -> Persona -> PowerRanger
-convertirEnPowerRanger colorDado persona = UnPowerRanger {color=colorDado, habilidadesPower= habilidadesSuper persona, nivelPelea= foldl length} -- con el fold hacer que se sumen el tamaño de las palabras de toda la lista
+convertirEnPowerRanger colorDado persona = UnPowerRanger {color=colorDado, habilidadesPower= habilidadesSuper persona, nivelPelea= sumarTamañoPalabra persona}
+
+personaBuena :: Persona -> Bool
+personaBuena persona = buena persona   -- suponemos que esta bien
 
 formarEquipoRanger :: [String] -> [Persona] -> [PowerRanger]
-formarEquipoRanger colores personas = map convertirEnPowerRanger personas    --- No funciona ----
+formarEquipoRanger colores personas = map convertirEnPowerRanger (filter personaBuena personas)
+
