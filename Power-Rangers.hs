@@ -45,8 +45,16 @@ findOrElse funcion valor lista
 
 ---- Punto 4 b) ----
 
-rangerLider ::
-rangerLider 
+powerRojo :: PowerRanger -> Bool
+powerRojo power = color power == "rojo"
+
+buscarPowerRojo :: [PowerRanger] -> PowerRanger
+buscarPowerRojo equipo = filter powerRojo equipo
+
+rangerLider :: [PowerRanger] -> PowerRanger
+rangerLider equipo
+    | length (buscarPowerRojo equipo) > 0 = head(buscarPowerRojo equipo)
+    | otherwise = head equipo
 
 ---- Punto 5 a) ----
 
