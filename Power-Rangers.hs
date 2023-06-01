@@ -78,3 +78,12 @@ rangerMasPoderoso (ranger1:ranger2:rangers)
 
 rangerHabilidoso :: PowerRanger -> Bool
 rangerHabilidoso ranger = length (habilidades ranger) > 5
+
+------ Punto 7 ------
+alfa5 = UnPowerRanger "metalico" [repararCosas, ay] 0
+
+repararCosas ::
+repararCosas
+
+ay :: String -> [String]
+ay palabra = (palabra: ay palabra)
