@@ -67,7 +67,7 @@ esMejor :: PowerRanger -> PowerRanger -> Bool
 esMejor ranger1 ranger2 = nivelPelea ranger1 > nivelPelea ranger2
 
 rangerMásPoderoso :: [PowerRanger] -> PowerRanger 
-rangerMásPoderoso equipo = ranger
+rangerMásPoderoso rangers = ranger
 rangerMasPoderoso (ranger1:ranger2:rangers)  
     | esMejor ranger1 ranger2 = rangerMasPoderoso (ranger1:rangers)
     | otherwise = rangerMasPoderoso (ranger2:rangers)
