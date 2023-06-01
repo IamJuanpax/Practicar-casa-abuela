@@ -82,8 +82,12 @@ rangerHabilidoso ranger = length (habilidades ranger) > 5
 ------ Punto 7 ------
 alfa5 = UnPowerRanger "metalico" [repararCosas, ay] 0
 
-repararCosas ::
-repararCosas
+data Cosa = UnaCosa{
+    estadoDañado :: Bool
+}
+
+repararCosas :: Cosa -> Cosa
+repararCosas cosa = cosa{estadoDañado = False}
 
 ay :: String -> [String]
 ay palabra = (palabra: ay palabra)
