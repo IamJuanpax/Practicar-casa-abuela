@@ -76,5 +76,5 @@ rangerMasPoderoso (ranger1:ranger2:rangers)
 
 ----- Punto 6 ------
 
-rangerHabilidoso ::
-rangerHabilidoso
+rangerHabilidoso :: PowerRanger -> Bool
+rangerHabilidoso ranger = length (habilidades ranger) > 5
